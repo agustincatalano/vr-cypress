@@ -13,7 +13,7 @@
     {
       "label": "todo list full",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "/cypress/screenshots/example to-do app -- displays two todo items by default.png",
+      "url": "/cypress/screenshots/todo.cy.js/example to-do app -- displays two todo items by default.png",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
