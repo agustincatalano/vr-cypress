@@ -1,0 +1,22 @@
+{
+  "name": "vr-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress-open": "cypress open",
+    "eslint-cypress": "eslint cypress",
+    "eslint-fix-cypress": "eslint cypress --fix",
+    "test-vr": "backstop test",
+    "vr-cleanup": "rm -rf cypress/screenshots/*",
+    "vr-approve": "backstop approve",
+    "cy-run-headless-chrome": "test-vr-cleanup & cypress run --browser chrome"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "backstopjs": "^6.2.2",
+    "cypress": "^13.5.0",
+    "eslint-plugin-cypress": "^2.15.1"
+  }
+}
