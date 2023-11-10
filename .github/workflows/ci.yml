@@ -35,7 +35,7 @@ jobs:
     needs: cypress-run  # This ensures that this job runs only after the cypress-run job is completed successfully
 
     steps:
-       - name: Debug current directory
+      - name: Debug current directory
         run: ls -l
 
       - name: Run additional tests
