@@ -35,8 +35,11 @@ jobs:
     needs: cypress-run  # This ensures that this job runs only after the cypress-run job is completed successfully
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Debug current directory
-        run: ls -l
+        run: pwd
 
       - name: Run additional tests
         run: npm run test-vr
