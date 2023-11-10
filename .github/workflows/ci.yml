@@ -28,6 +28,16 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+      # After the test run completes
+
+      # store videos and any screenshots
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-results
+          path: |
+            cypress/screenshots
+            cypress/videos
 
   vr-tests:
     runs-on: ubuntu-22.04
@@ -35,9 +45,22 @@ jobs:
     needs: cypress-run  # This ensures that this job runs only after the cypress-run job is completed successfully
 
     steps:
+      - name: Download Cypress results
+        uses: actions/download-artifact@v3
+        with:
+          name: cypress-results
+          path: cypress-results
+
+      # Add steps to install and run additional tests here
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run additional tests
+        run: npm run test-vr
+
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Debug current directory
         run: pwd
 
